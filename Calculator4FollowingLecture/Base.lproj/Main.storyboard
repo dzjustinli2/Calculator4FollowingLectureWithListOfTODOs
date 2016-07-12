@@ -26,7 +26,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Ldr-Gk-uRW">
-                                <rect key="frame" x="460" y="370" width="120" height="210"/>
+                                <rect key="frame" x="460" y="382" width="120" height="210"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="9Y1-kY-Iq4">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="126"/>
@@ -291,8 +291,26 @@
                             <constraint firstItem="Usi-w9-oE8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Ej0-J3-9Fb"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Usi-w9-oE8" secondAttribute="leading" id="dQT-70-ygl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ldr-Gk-uRW" secondAttribute="trailing" id="ebu-X9-yjt"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ldr-Gk-uRW" secondAttribute="bottom" constant="20" id="uIW-s4-5oa"/>
+                            <constraint firstItem="Ldr-Gk-uRW" firstAttribute="top" secondItem="Usi-w9-oE8" secondAttribute="bottom" constant="494" id="jhV-VY-HiK">
+                                <variation key="heightClass=regular" constant="8" symbolic="YES"/>
+                            </constraint>
+                            <constraint firstItem="Ldr-Gk-uRW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="440" id="s4u-qm-wcZ">
+                                <variation key="heightClass=regular" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ldr-Gk-uRW" secondAttribute="bottom" constant="8" symbolic="YES" id="uIW-s4-5oa"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="jhV-VY-HiK"/>
+                                <exclude reference="s4u-qm-wcZ"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="constraints">
+                                <include reference="jhV-VY-HiK"/>
+                                <include reference="s4u-qm-wcZ"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="displayLabel" destination="Usi-w9-oE8" id="PX9-X5-hXP"/>
