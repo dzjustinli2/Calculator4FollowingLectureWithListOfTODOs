@@ -44,6 +44,7 @@ class CalculatorViewController: UIViewController {
         //TODO: what if pressed "5.4" and "+", and then pressed ".", should display "0."
         
         if userIsInTheMiddleOfTyping {
+            
             //"displayLabel.text" should never equal to nil or non number strings, should I use "if let" to safety unwrap "displayLabel.text" or should I not use "if let" and let unwrapping "displayLabel.text" crash if it contain nil
             if let displayLabelText = displayLabel.text where displayLabelText.rangeOfString(".") == nil{
                 displayLabel.text! += sender.currentTitle!
