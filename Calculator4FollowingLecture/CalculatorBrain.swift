@@ -16,11 +16,11 @@ class CalculatorBrain {
     private var operationLookUp = [
         "π" : Operation.Constant(M_PI),
         "e" : Operation.Constant(M_E),
-        "√" : Operation.UnaryOperation( { sqrt($0) }, { "√(" + $0 + ")" } ),
-        "+" : Operation.BinaryOperation { $0 + $1},
-        "-" : Operation.BinaryOperation { $0 - $1},
-        "×" : Operation.BinaryOperation { $0 * $1},
-        "÷" : Operation.BinaryOperation { $0 / $1},
+        "√" : Operation.UnaryOperation( { sqrt($0) }, { "√(\($0))"} ),
+        "+" : Operation.BinaryOperation( { $0 + $1}, { "\($0) + "} ),
+//        "-" : Operation.BinaryOperation { $0 - $1},
+//        "×" : Operation.BinaryOperation { $0 * $1},
+//        "÷" : Operation.BinaryOperation { $0 / $1},
         "=" : Operation.Equals
     ]
     
@@ -28,7 +28,7 @@ class CalculatorBrain {
         //TODO: what if I treat constants as numbers
         case Constant(Double)
         case UnaryOperation((Double) -> Double, (String) -> String)
-        case BinaryOperation((Double, Double) -> Double)
+        case BinaryOperation((Double, Double) -> Double, (String) -> String)
         case Equals
     }
     
@@ -55,6 +55,7 @@ class CalculatorBrain {
     }
     
     var isPartialResult: Bool {
+        //TODO: should write "pending != nil" or "pending == nil"
         return pending != nil 
     }
     
@@ -69,12 +70,15 @@ class CalculatorBrain {
             switch operation {
             case .Constant(let associatedConstantValue):
                 accumulator = associatedConstantValue
-            case .UnaryOperation(let unaryFunction, let unaryString):
+            case .UnaryOperation(let unaryFunction, let unaryStringFunction):
                 
-                descriptionAccumulator = unaryString(String(accumulator))
+                descriptionAccumulator = unaryStringFunction(String(accumulator))
                 accumulator = unaryFunction(accumulator)
                 
-            case .BinaryOperation(let binaryFunction):
+            case .BinaryOperation(let binaryFunction, let binaryStringFunction):
+                
+                descriptionAccumulator += binaryStringFunction(String(accumulator))
+                
                 executePendingBinaryOperation()
                 pending = PendingBinaryFunctionInfo(binaryFunction: binaryFunction, firstOperand: accumulator)
             case .Equals:

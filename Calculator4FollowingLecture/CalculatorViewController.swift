@@ -86,7 +86,7 @@ class CalculatorViewController: UIViewController {
         if let operation = sender.currentTitle {
             brain.performOperation(operation)
             
-            //TODO: should "calculationStepsLabel.text = brain.description" come before or after "displayedNumericalValue = brain.result"
+            //TODO: should "calculationStepsLabel.text = brain.description" come before or after "displayedNumericalValue = brain.result" or it doesnt matter
             calculationStepsLabel.text = brain.description
             
             //TODO: reasons on where to place "displayedNumericalValue = brain.result", inside or outside of "if let operation = sender.currentTitle {}"
