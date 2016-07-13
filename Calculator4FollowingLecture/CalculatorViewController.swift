@@ -14,6 +14,8 @@ import UIKit
 // 2) press "." only, should change display to "0.", but if press "=" next, should display "0"
 // 3) press a number, then press ".", e.g. 5. then press "=", should display "5"
 // 4) what if pressed "5.4" and "+", and then pressed ".", should display "0."
+// 5) press "5" and "+" and then press "-" and "2", result should be "3" not "5" 
+// 6) press "7" and "+" and "=" should results in "14" 
 
 //TODO: Version control using git and github
 
@@ -34,7 +36,9 @@ class CalculatorViewController: UIViewController {
     }
     
     @IBOutlet private weak var displayLabel: UILabel!
+    @IBOutlet weak var calculationStepsLabel: UILabel!
     
+    //TODO: implement check for "." in one or two lines of code 
     @IBAction func pressedDot(sender: UIButton) {
         //TODO: where should be test for whether "." already exist be placed, in a separate function or inside "func pressedDigit(sender: UIButton){}", in other words, should "." button be treated as the same as number buttons or it should be treated as a different category of button
         

@@ -16,7 +16,7 @@ class CalculatorBrain {
     private var operationLookUp = [
         "π" : Operation.Constant(M_PI),
         "e" : Operation.Constant(M_E),
-        "√" : Operation.UnaryOperation { sqrt($0) },
+        "√" : Operation.UnaryOperation( { sqrt($0) } ),
         "+" : Operation.BinaryOperation { $0 + $1},
         "-" : Operation.BinaryOperation { $0 - $1},
         "×" : Operation.BinaryOperation { $0 * $1},
@@ -47,6 +47,18 @@ class CalculatorBrain {
             pending = nil
         }
     }
+    
+    private var descriptionAccumulator: String = ""
+    
+    var description: String {
+        return descriptionAccumulator
+    }
+    
+    var isPartialResult: Bool {
+        return pending != nil 
+    }
+    
+    
     
     func setOperand(operand: Double){
         accumulator = operand
