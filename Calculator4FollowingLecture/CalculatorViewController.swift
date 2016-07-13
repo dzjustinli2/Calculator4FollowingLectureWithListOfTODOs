@@ -82,10 +82,16 @@ class CalculatorViewController: UIViewController {
             userIsInTheMiddleOfTyping = false
             brain.setOperand(displayedNumericalValue)
         }
+        //use "if let" to check if "sender" contain a valid "currentTitle", because some "sender" can have empty string as "currentTitle"
         if let operation = sender.currentTitle {
             brain.performOperation(operation)
+            
+            //TODO: should "calculationStepsLabel.text = brain.description" come before or after "displayedNumericalValue = brain.result"
+            calculationStepsLabel.text = brain.description
+            
             //TODO: reasons on where to place "displayedNumericalValue = brain.result", inside or outside of "if let operation = sender.currentTitle {}"
             displayedNumericalValue = brain.result
+            
         }
     }
     
