@@ -84,7 +84,7 @@ class CalculatorBrain {
                 accumulator = associatedConstantValue
             case .UnaryOperation(let unaryFunction, let unaryStringFunction):
                 
-                descriptionAccumulator = unaryStringFunction(String(accumulator))
+                descriptionAccumulator = unaryStringFunction(descriptionAccumulator)
                 
                 accumulator = unaryFunction(accumulator)
                 
