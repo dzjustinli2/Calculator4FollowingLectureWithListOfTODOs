@@ -81,7 +81,10 @@ class CalculatorBrain {
         if let operation = operationLookUp[symbol] {
             switch operation {
             case .Constant(let associatedConstantValue):
+                
+                descriptionAccumulator = symbol
                 accumulator = associatedConstantValue
+                
             case .UnaryOperation(let unaryFunction, let unaryStringFunction):
                 
                 descriptionAccumulator = unaryStringFunction(descriptionAccumulator)
