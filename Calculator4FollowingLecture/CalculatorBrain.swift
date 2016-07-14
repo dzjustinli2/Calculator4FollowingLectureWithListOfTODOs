@@ -52,7 +52,8 @@ class CalculatorBrain {
         }
     }
     
-    private var descriptionAccumulator: String = ""
+    //use with a space in between i.e. " ", not without space, "", because for if UILabel's text is equal to "", its size will be 0, 0, and disappear from user interface  
+    private var descriptionAccumulator: String = " "
     
     var description: String {
         get {
@@ -64,6 +65,7 @@ class CalculatorBrain {
 
         }
     }
+    
     
     var isPartialResult: Bool {
         //TODO: should write "pending != nil" or "pending == nil"
@@ -78,6 +80,7 @@ class CalculatorBrain {
     }
     
     func performOperation(symbol: String){
+        
         if let operation = operationLookUp[symbol] {
             switch operation {
             case .Constant(let associatedConstantValue):
@@ -111,5 +114,11 @@ class CalculatorBrain {
         get {
             return accumulator
         }
+    }
+    
+    func clearAndResetToDefault(){
+        pending = nil
+        accumulator = 0
+        descriptionAccumulator = " "
     }
 }

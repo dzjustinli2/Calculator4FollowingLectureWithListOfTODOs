@@ -31,11 +31,11 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="30" height="42"/>
                                                         <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                        <state key="normal" title="Ac">
+                                                        <state key="normal" title="AC">
                                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="pressedOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wKZ-Od-nC3"/>
+                                                            <action selector="clearDataAndResetCalculator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xcq-en-meA"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bxr-P1-48f">

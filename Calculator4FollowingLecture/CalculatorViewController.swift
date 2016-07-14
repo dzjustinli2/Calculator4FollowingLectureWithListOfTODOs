@@ -16,6 +16,13 @@ import UIKit
 // 4) what if pressed "5.4" and "+", and then pressed ".", should display "0."
 // 5) press "5" and "+" and then press "-" and "2", result should be "3" not "5" 
 // 6) press "7" and "+" and "=" should results in "14" 
+// 7)  after press "5" and "+", correctly display "5+..."
+//     after press "5", "+", "6" and "+", correctly display "5+6..."
+//     after press "5", "+", "6" and "=", correctly display "5+6="
+// 8) press "π" and "calculationStepsLabel.text" display "π="
+//    press "7, +, π" and "calculationStepsLabel.text" display "7+π..."
+// 9) successfully displayed "8 +" after pressing "8" and "+"
+//    successfully displayed "8 + 9 + " after pressing "8", "+", "9" and "+"
 
 //TODO: Version control using git and github
 
@@ -95,5 +102,15 @@ class CalculatorViewController: UIViewController {
             
         }
     }
+    
+    //TODO: Should I treat clear button the same as all other operators or should I treat it differently, as a separate entity 
+    @IBAction func clearDataAndResetCalculator(sender: UIButton) {
+        
+        brain.clearAndResetToDefault()
+        calculationStepsLabel.text = brain.description
+        displayedNumericalValue = brain.result
+        
+    }
+    
 }
 
