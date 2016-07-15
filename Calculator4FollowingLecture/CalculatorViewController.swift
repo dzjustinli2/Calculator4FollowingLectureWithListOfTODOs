@@ -103,12 +103,14 @@ class CalculatorViewController: UIViewController {
         }
     }
     
-    //TODO: Should I treat clear button the same as all other operators or should I treat it differently, as a separate entity 
+    //TODO: Should I treat clear button the same as all other operators or should I treat it differently, as a separate entity
     @IBAction func clearDataAndResetCalculator(sender: UIButton) {
         
         brain.clearAndResetToDefault()
         calculationStepsLabel.text = brain.description
         displayedNumericalValue = brain.result
+        
+        userIsInTheMiddleOfTyping = false 
         
     }
     
