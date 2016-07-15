@@ -23,8 +23,15 @@ import UIKit
 //    press "7, +, π" and "calculationStepsLabel.text" display "7+π..."
 // 9) successfully displayed "8 +" after pressing "8" and "+"
 //    successfully displayed "8 + 9 + " after pressing "8", "+", "9" and "+"
+// 10) divide any number by 0, "displayLabel.text" should display not a number (this is yet to be implemented)
+//11) user pressed "5" and pressed "D", instead of displaying nothing at "displayLabel.text", should display "0"
+//12) user pressed "5, ., 6" and pressed "D", should display "5." at "displayLabel.text"
+//13) user pressed "5, ., 6" and pressed "D", should display "5." at "displayLabel.text", and pressed "+", should work at normal
+//14) when user press "8" and "D", "displayLabel.text" should not be blank, it should display "0" instead
+//15) when user press "3.5" and "D", "displayLabel.text" should display "3", not "3."
 
 //TODO: Version control using git and github
+//TODO: when divide by 0, "displayLabel.text" should display not a number
 
 class CalculatorViewController: UIViewController {
     
@@ -114,5 +121,15 @@ class CalculatorViewController: UIViewController {
         
     }
     
+    //TODO: user pressed "5" and pressed "D", instead of displaying nothing at "displayLabel.text", should display "0"
+    //TODO: user pressed "5, ., 6" and pressed "D", should display "5." at "displayLabel.text"
+    //TODO: user pressed "5, ., 6" and pressed "D", should display "5." at "displayLabel.text", and pressed "+", should work at normal
+    @IBAction private func deletePreviouslyEnteredDigit(sender: UIButton) {
+        //"displayLabel.text" should always contain some number, whether it would be the number entered by the user or "0", therefore I'm force unwrapping it here
+        var displayLabelText = displayLabel.text!
+        _ = displayLabelText.removeAtIndex(displayLabelText.endIndex.predecessor())
+        displayLabel.text = displayLabelText
+        
+    }
 }
 
