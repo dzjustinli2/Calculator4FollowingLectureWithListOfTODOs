@@ -123,12 +123,17 @@ class CalculatorViewController: UIViewController {
     
     //TODO: user pressed "5" and pressed "D", instead of displaying nothing at "displayLabel.text", should display "0"
     //TODO: user pressed "5, ., 6" and pressed "D", should display "5." at "displayLabel.text"
-    //TODO: user pressed "5, ., 6" and pressed "D", should display "5." at "displayLabel.text", and pressed "+", should work at normal
+    //TODO: user pressed "5, ., 6" and pressed "D", should display "5." at "displayLabel.text", and pressed "+", should work at normal, as in "5." should work as "5"
     @IBAction private func deletePreviouslyEnteredDigit(sender: UIButton) {
         //"displayLabel.text" should always contain some number, whether it would be the number entered by the user or "0", therefore I'm force unwrapping it here
         var displayLabelText = displayLabel.text!
         _ = displayLabelText.removeAtIndex(displayLabelText.endIndex.predecessor())
-        displayLabel.text = displayLabelText
+        if displayLabelText.characters.count == 0 {
+            displayLabel.text = "0"
+            userIsInTheMiddleOfTyping = false 
+        } else {
+            displayLabel.text = displayLabelText
+        }
         
     }
 }
