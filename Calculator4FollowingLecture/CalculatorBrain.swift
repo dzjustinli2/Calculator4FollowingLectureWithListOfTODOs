@@ -16,6 +16,7 @@ class CalculatorBrain {
     private var operationLookUp = [
         "π" : Operation.Constant(M_PI),
         "e" : Operation.Constant(M_E),
+        "Rand" : Operation.NullOperation( {drand48()} ),
         "√" : Operation.UnaryOperation( { sqrt($0) }, { "√(\($0))"} ),
         "+" : Operation.BinaryOperation({ $0 + $1 }, { "\($0) + \($1)"} ),
         "-" : Operation.BinaryOperation ({ $0 - $1 }, {"\($0) - \($1)" }),
@@ -27,6 +28,7 @@ class CalculatorBrain {
     private enum Operation {
         //TODO: what if I treat constants as numbers
         case Constant(Double)
+        case NullOperation(() -> Double)
         case UnaryOperation((Double) -> Double, (String) -> String)
         case BinaryOperation((Double, Double) -> Double, (String, String) -> String)
         case Equals
@@ -87,6 +89,11 @@ class CalculatorBrain {
                 
                 descriptionAccumulator = symbol
                 accumulator = associatedConstantValue
+                
+            case .NullOperation(let nullFunction):
+                
+                descriptionAccumulator = String(nullFunction())
+                accumulator = nullFunction()
                 
             case .UnaryOperation(let unaryFunction, let unaryStringFunction):
                 
