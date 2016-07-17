@@ -29,6 +29,7 @@ import UIKit
 //13) user pressed "5, ., 6" and pressed "D", should display "5." at "displayLabel.text", and pressed "+", should work at normal
 //14) when user press "8" and "D", "displayLabel.text" should not be blank, it should display "0" instead
 //15) when user press "3.5" and "D", "displayLabel.text" should display "3", not "3."
+//16) press "2, /, 3", "displayLabel.text" should equal to "0.666667"
 
 //TODO: Version control using git and github
 //TODO: when divide by 0, "displayLabel.text" should display not a number
@@ -42,11 +43,21 @@ class CalculatorViewController: UIViewController {
     private var displayedNumericalValue: Double? {
         get {
             //displayLabel.text should never be nil and should never be a non number string. if it is, that means there is a bug, explicitly unwrapping it will cause the program to crash, which is what I want
-            return Double(displayLabel.text!)
+            return Double.roundingOff(displayLabel.text!, decimalPlace: 6)
         }
         set {
+            
+            //create an instance of "NSNumberFormatter" where the max number of digit displayed after decimal point is 6 digit and min number of digit displayed before decimal point is 1 digit 
+            //i guess a side effect of "formatter.maximumFractionDigits" is that it reduces calculation precision
+            let formatter = NSNumberFormatter()
+            formatter.maximumFractionDigits = 6
+            formatter.minimumIntegerDigits = 1
+            
             //TODO: is it safe to unwrap "newValue"?
-            displayLabel.text = String(newValue!)
+            let stringRepresentationOfVariableNewValueUpToSixDecimalPlaces = formatter.stringFromNumber(newValue!)
+            
+            //TODO: is it safe to unwrap "stringRepresentationOfVariableNewValueUpToSixDecimalPlaces"?
+            displayLabel.text = String(stringRepresentationOfVariableNewValueUpToSixDecimalPlaces!)
         }
     }
     
@@ -115,6 +126,7 @@ class CalculatorViewController: UIViewController {
             }
         } else {
             clearDataAndResetCalculator()
+            displayLabel.text = "Not a number"
         }
     }
     
@@ -144,5 +156,25 @@ class CalculatorViewController: UIViewController {
         }
         
     }
+}
+
+extension Double {
+    
+    private static func roundingOff(stringRepresentationOfADoubleValue: String, decimalPlace: Int) -> Double? {
+        let formatter = NSNumberFormatter()
+        if let value = formatter.numberFromString(stringRepresentationOfADoubleValue)?.doubleValue {
+            return value.roundToPlace(value, decimalPlace: decimalPlace)
+        } else {
+            return nil
+        }
+    }
+    
+    private func roundToPlace(value: Double, decimalPlace: Int) -> Double {
+        let divider = pow(10.0, Double(decimalPlace))
+        let roundedNumber = round(value * divider) / divider
+        return roundedNumber
+    }
+    
+    
 }
 
