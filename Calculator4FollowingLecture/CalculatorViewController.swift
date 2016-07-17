@@ -42,7 +42,10 @@ class CalculatorViewController: UIViewController {
     
     private var displayedNumericalValue: Double? {
         get {
-            //displayLabel.text should never be nil and should never be a non number string. if it is, that means there is a bug, explicitly unwrapping it will cause the program to crash, which is what I want
+//            //displayLabel.text should never be nil and should never be a non number string. if it is, that means there is a bug, explicitly unwrapping it will cause the program to crash, which is what I want
+//            return Double(displayLabel.text!)
+            
+            //TODO: should the number be rounded off in view controller, before it is used in the calculation? this will affect calculation precision, i think it is best that the result is rounded off, not the operand. But at the same time, the numbers shown in "calculationStepsLabel.text" is rounded off numbers, this means that the number used in calculation should be the rounded of number, because i think its good practice that what user sees is used in the calculation, instead of user see the rounded of number but the non-rounded number is used in the calculation 
             return Double.roundingOff(displayLabel.text!, decimalPlace: 6)
         }
         set {
