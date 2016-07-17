@@ -92,8 +92,9 @@ class CalculatorBrain {
                 
             case .NullOperation(let nullFunction):
                 
-                descriptionAccumulator = String(nullFunction())
+                //unlike ".UnaryOperation", here at ".NullOperation", we have to assign to "accumulator" first and then assign to "descriptionAccumulator", because the "accumulator" is not changed by the "nullFunction()" and also because we need to convert "accumulator" to "descriptionAccumulator". Whereas in the ".UnaryOperation", the order of assinging new values to "accumulator" and "descriptionAccumulator" does not matter 
                 accumulator = nullFunction()
+                descriptionAccumulator = String(accumulator)
                 
             case .UnaryOperation(let unaryFunction, let unaryStringFunction):
                 
