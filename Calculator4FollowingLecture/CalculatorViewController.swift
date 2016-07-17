@@ -39,13 +39,14 @@ class CalculatorViewController: UIViewController {
     private var brain = CalculatorBrain()
     
     
-    private var displayedNumericalValue: Double {
+    private var displayedNumericalValue: Double? {
         get {
             //displayLabel.text should never be nil and should never be a non number string. if it is, that means there is a bug, explicitly unwrapping it will cause the program to crash, which is what I want
-            return Double(displayLabel.text!)!
+            return Double(displayLabel.text!)
         }
         set {
-            displayLabel.text = String(newValue)
+            //TODO: is it safe to unwrap "newValue"?
+            displayLabel.text = String(newValue!)
         }
     }
     
@@ -92,26 +93,33 @@ class CalculatorViewController: UIViewController {
     
     //TODO: what if I treat constants as numbers instead of operation?
     @IBAction private func pressedOperation(sender: UIButton) {
-        if userIsInTheMiddleOfTyping {
-            userIsInTheMiddleOfTyping = false
-            brain.setOperand(displayedNumericalValue)
-        }
-        //use "if let" to check if "sender" contain a valid "currentTitle", because some "sender" can have empty string as "currentTitle"
-        if let operation = sender.currentTitle {
-            brain.performOperation(operation)
-            
-            //TODO: should "calculationStepsLabel.text = brain.description" come before or after "displayedNumericalValue = brain.result" or it doesnt matter
-//            calculationStepsLabel.text = brain.description
-            calculationStepsLabel.text = brain.description + (brain.isPartialResult ? "..." : "=")
-            
-            //TODO: reasons on where to place "displayedNumericalValue = brain.result", inside or outside of "if let operation = sender.currentTitle {}"
-            displayedNumericalValue = brain.result
-            
+        
+        // "if let displayedNumber = displayedNumericalValue {}" exist because we need to protect againest cases where "displayedNumericalValue" is equal to nil, which happens when "displayLabel.text" does not contain a string that can be converted to a number 
+        if let displayedNumber = displayedNumericalValue {
+        
+            if userIsInTheMiddleOfTyping {
+                userIsInTheMiddleOfTyping = false
+                brain.setOperand(displayedNumber)
+            }
+            //use "if let" to check if "sender" contain a valid "currentTitle", because some "sender" can have empty string as "currentTitle"
+            if let operation = sender.currentTitle {
+                brain.performOperation(operation)
+                
+                //TODO: should "calculationStepsLabel.text = brain.description" come before or after "displayedNumericalValue = brain.result" or it doesnt matter
+                //            calculationStepsLabel.text = brain.description
+                calculationStepsLabel.text = brain.description + (brain.isPartialResult ? "..." : "=")
+                
+                //TODO: reasons on where to place "displayedNumericalValue = brain.result", inside or outside of "if let operation = sender.currentTitle {}"
+                displayedNumericalValue = brain.result
+                
+            }
+        } else {
+            clearDataAndResetCalculator()
         }
     }
     
     //TODO: Should I treat clear button the same as all other operators or should I treat it differently, as a separate entity
-    @IBAction func clearDataAndResetCalculator(sender: UIButton) {
+    @IBAction func clearDataAndResetCalculator() {
         
         brain.clearAndResetToDefault()
         calculationStepsLabel.text = brain.description
