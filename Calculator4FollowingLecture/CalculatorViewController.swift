@@ -23,8 +23,16 @@ import UIKit
 //    press "7, +, π" and "calculationStepsLabel.text" display "7+π..."
 // 9) successfully displayed "8 +" after pressing "8" and "+"
 //    successfully displayed "8 + 9 + " after pressing "8", "+", "9" and "+"
+// 10) divide any number by 0, "displayLabel.text" should display not a number (this is yet to be implemented)
+//11) user pressed "5" and pressed "D", instead of displaying nothing at "displayLabel.text", should display "0"
+//12) user pressed "5, ., 6" and pressed "D", should display "5." at "displayLabel.text"
+//13) user pressed "5, ., 6" and pressed "D", should display "5." at "displayLabel.text", and pressed "+", should work at normal
+//14) when user press "8" and "D", "displayLabel.text" should not be blank, it should display "0" instead
+//15) when user press "3.5" and "D", "displayLabel.text" should display "3", not "3."
+//16) press "2, /, 3", "displayLabel.text" should equal to "0.666667"
 
 //TODO: Version control using git and github
+//TODO: when divide by 0, "displayLabel.text" should display not a number
 
 class CalculatorViewController: UIViewController {
     
@@ -32,13 +40,27 @@ class CalculatorViewController: UIViewController {
     private var brain = CalculatorBrain()
     
     
-    private var displayedNumericalValue: Double {
+    private var displayedNumericalValue: Double? {
         get {
-            //displayLabel.text should never be nil and should never be a non number string. if it is, that means there is a bug, explicitly unwrapping it will cause the program to crash, which is what I want
-            return Double(displayLabel.text!)!
+//            //displayLabel.text should never be nil and should never be a non number string. if it is, that means there is a bug, explicitly unwrapping it will cause the program to crash, which is what I want
+//            return Double(displayLabel.text!)
+            
+            //TODO: should the number be rounded off in view controller, before it is used in the calculation? this will affect calculation precision, i think it is best that the result is rounded off, not the operand. But at the same time, the numbers shown in "calculationStepsLabel.text" is rounded off numbers, this means that the number used in calculation should be the rounded of number, because i think its good practice that what user sees is used in the calculation, instead of user see the rounded of number but the non-rounded number is used in the calculation 
+            return Double.roundingOff(displayLabel.text!, decimalPlace: 6)
         }
         set {
-            displayLabel.text = String(newValue)
+            
+            //create an instance of "NSNumberFormatter" where the max number of digit displayed after decimal point is 6 digit and min number of digit displayed before decimal point is 1 digit 
+            //i guess a side effect of "formatter.maximumFractionDigits" is that it reduces calculation precision
+            let formatter = NSNumberFormatter()
+            formatter.maximumFractionDigits = 6
+            formatter.minimumIntegerDigits = 1
+            
+            //TODO: is it safe to unwrap "newValue"?
+            let stringRepresentationOfVariableNewValueUpToSixDecimalPlaces = formatter.stringFromNumber(newValue!)
+            
+            //TODO: is it safe to unwrap "stringRepresentationOfVariableNewValueUpToSixDecimalPlaces"?
+            displayLabel.text = String(stringRepresentationOfVariableNewValueUpToSixDecimalPlaces!)
         }
     }
     
@@ -85,26 +107,34 @@ class CalculatorViewController: UIViewController {
     
     //TODO: what if I treat constants as numbers instead of operation?
     @IBAction private func pressedOperation(sender: UIButton) {
-        if userIsInTheMiddleOfTyping {
-            userIsInTheMiddleOfTyping = false
-            brain.setOperand(displayedNumericalValue)
-        }
-        //use "if let" to check if "sender" contain a valid "currentTitle", because some "sender" can have empty string as "currentTitle"
-        if let operation = sender.currentTitle {
-            brain.performOperation(operation)
-            
-            //TODO: should "calculationStepsLabel.text = brain.description" come before or after "displayedNumericalValue = brain.result" or it doesnt matter
-//            calculationStepsLabel.text = brain.description
-            calculationStepsLabel.text = brain.description + (brain.isPartialResult ? "..." : "=")
-            
-            //TODO: reasons on where to place "displayedNumericalValue = brain.result", inside or outside of "if let operation = sender.currentTitle {}"
-            displayedNumericalValue = brain.result
-            
+        
+        // "if let displayedNumber = displayedNumericalValue {}" exist because we need to protect againest cases where "displayedNumericalValue" is equal to nil, which happens when "displayLabel.text" does not contain a string that can be converted to a number 
+        if let displayedNumber = displayedNumericalValue {
+        
+            if userIsInTheMiddleOfTyping {
+                userIsInTheMiddleOfTyping = false
+                brain.setOperand(displayedNumber)
+            }
+            //use "if let" to check if "sender" contain a valid "currentTitle", because some "sender" can have empty string as "currentTitle"
+            if let operation = sender.currentTitle {
+                brain.performOperation(operation)
+                
+                //TODO: should "calculationStepsLabel.text = brain.description" come before or after "displayedNumericalValue = brain.result" or it doesnt matter
+                //            calculationStepsLabel.text = brain.description
+                calculationStepsLabel.text = brain.description + (brain.isPartialResult ? "..." : "=")
+                
+                //TODO: reasons on where to place "displayedNumericalValue = brain.result", inside or outside of "if let operation = sender.currentTitle {}"
+                displayedNumericalValue = brain.result
+                
+            }
+        } else {
+            clearDataAndResetCalculator()
+            displayLabel.text = "Not a number"
         }
     }
     
     //TODO: Should I treat clear button the same as all other operators or should I treat it differently, as a separate entity
-    @IBAction func clearDataAndResetCalculator(sender: UIButton) {
+    @IBAction func clearDataAndResetCalculator() {
         
         brain.clearAndResetToDefault()
         calculationStepsLabel.text = brain.description
@@ -113,6 +143,41 @@ class CalculatorViewController: UIViewController {
         userIsInTheMiddleOfTyping = false 
         
     }
+    
+    //TODO: user pressed "5" and pressed "D", instead of displaying nothing at "displayLabel.text", should display "0"
+    //TODO: user pressed "5, ., 6" and pressed "D", should display "5." at "displayLabel.text"
+    //TODO: user pressed "5, ., 6" and pressed "D", should display "5." at "displayLabel.text", and pressed "+", should work at normal, as in "5." should work as "5"
+    @IBAction private func deletePreviouslyEnteredDigit(sender: UIButton) {
+        //"displayLabel.text" should always contain some number, whether it would be the number entered by the user or "0", therefore I'm force unwrapping it here
+        var displayLabelText = displayLabel.text!
+        _ = displayLabelText.removeAtIndex(displayLabelText.endIndex.predecessor())
+        if displayLabelText.characters.count == 0 {
+            displayLabel.text = "0"
+            userIsInTheMiddleOfTyping = false 
+        } else {
+            displayLabel.text = displayLabelText
+        }
+        
+    }
+}
+
+extension Double {
+    
+    private static func roundingOff(stringRepresentationOfADoubleValue: String, decimalPlace: Int) -> Double? {
+        let formatter = NSNumberFormatter()
+        if let value = formatter.numberFromString(stringRepresentationOfADoubleValue)?.doubleValue {
+            return value.roundToPlace(value, decimalPlace: decimalPlace)
+        } else {
+            return nil
+        }
+    }
+    
+    private func roundToPlace(value: Double, decimalPlace: Int) -> Double {
+        let divider = pow(10.0, Double(decimalPlace))
+        let roundedNumber = round(value * divider) / divider
+        return roundedNumber
+    }
+    
     
 }
 

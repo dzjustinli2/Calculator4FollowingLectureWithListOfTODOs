@@ -54,7 +54,7 @@ class CalculatorBrain {
         }
     }
     
-    //use with a space in between i.e. " ", not without space, "", because for if UILabel's text is equal to "", its size will be 0, 0, and disappear from user interface  
+    //use with a space in between i.e. " ", not without space, "", because for if UILabel's text is equal to "", its size will be 0, 0, and disappear from user interface
     private var descriptionAccumulator: String = " "
     
     var description: String {
