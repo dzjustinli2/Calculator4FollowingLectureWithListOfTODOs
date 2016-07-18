@@ -30,6 +30,7 @@ import UIKit
 //14) when user press "8" and "D", "displayLabel.text" should not be blank, it should display "0" instead
 //15) when user press "3.5" and "D", "displayLabel.text" should display "3", not "3."
 //16) press "2, /, 3", "displayLabel.text" should equal to "0.666667"
+//17) at least one UI test case for each one of the button in the calcualtor 
 
 //TODO: Version control using git and github
 //TODO: when divide by 0, "displayLabel.text" should display not a number
