@@ -20,7 +20,7 @@ class CalculatorBrain {
         "Rand" : Operation.NullOperation( {drand48()} ),
         
         "√" : Operation.UnaryOperation( { sqrt($0) }, { "√(\($0))"} ),
-        "∛" : Operation.UnaryOperation( { pow($0, 1/3) }, { "∛\($0)" }),
+        "∛" : Operation.UnaryOperation( { pow($0, 1/3) }, { "∛(\($0))" }),
         "logₑ" : Operation.UnaryOperation({ log($0) / log(M_E) }, {"logₑ(\($0))"} ),
         //FIXME: press "100" and "log₁₀" should make "displayLabel.text" equal to 2, had to add "log(10)" to "log($0) / log(10)" to make it work as expected, but I thought just having "log(100)" is equal to "log₁₀(100)" should work just fine. Find out why
         "log₁₀": Operation.UnaryOperation( { log($0) / log(10) }, { "log₁₀(\($0))" }),
@@ -35,10 +35,9 @@ class CalculatorBrain {
         
         "+" : Operation.BinaryOperation({ $0 + $1 }, { "\($0) + \($1)"} ),
         "-" : Operation.BinaryOperation ({ $0 - $1 }, {"\($0) - \($1)" }),
-        "×" : Operation.BinaryOperation ({ $0 * $1 }, { "\($0) x \($1)" }),
+        "×" : Operation.BinaryOperation ({ $0 * $1 }, { "\($0) × \($1)" }),
         "÷" : Operation.BinaryOperation ({ $0 / $1 }, { "\($0) ÷ \($1)" }),
         "%" : Operation.BinaryOperation( {$0 % $1 }, {"\($0) % \($1)"} ),
-        //TODO: "pow()" function require
         "xⁿ" : Operation.BinaryOperation( { pow($0, $1) }, { "\($0)^\($1)" } ),
         "EE" : Operation.BinaryOperation( { $0 * (pow(10.0, $1)) }, { "\($0) × 10^\($1)" }),
         //TODO: did NOT implement functions for "sinh", "cosh", "tanh" button because I dont know what they do.....😓.....and also I love IT!! its so freaking amazing!!
@@ -99,7 +98,18 @@ class CalculatorBrain {
     
     func setOperand(operand: Double){
         accumulator = operand
-        descriptionAccumulator = String(operand)
+        
+        //TODO: too many lines of code just to remove the trailing zero of "operand"
+        let formatter = NSNumberFormatter()
+        formatter.minimumFractionDigits = 0
+        formatter.maximumFractionDigits = 6
+        formatter.minimumIntegerDigits = 1
+        if let stringOfOperandWithNoTrailingZero = formatter.stringFromNumber(operand) {
+            
+            descriptionAccumulator = stringOfOperandWithNoTrailingZero
+        } else {
+            descriptionAccumulator = String(operand)
+        }
     }
     
     func performOperation(symbol: String){

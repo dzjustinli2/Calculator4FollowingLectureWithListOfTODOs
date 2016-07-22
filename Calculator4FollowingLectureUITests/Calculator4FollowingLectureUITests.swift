@@ -8,7 +8,10 @@
 
 import XCTest
 
+
 class Calculator4FollowingLectureUITests: XCTestCase {
+    
+    
         
     override func setUp() {
         super.setUp()
@@ -31,6 +34,53 @@ class Calculator4FollowingLectureUITests: XCTestCase {
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        XCUIDevice.sharedDevice().orientation = .LandscapeRight
+        
+        let app = XCUIApplication()
+        app.buttons["7"].tap()
+        let plusButton = app.buttons["+"]
+        plusButton.tap()
+        app.buttons["8"].tap()
+        let equalButton = app.buttons["="]
+        equalButton.tap()
+        
+    }
+    
+    func testEverything(){
+        
+        let app = XCUIApplication()
+        let button = app.buttons["7"]
+        button.tap()
+        
+        let button2 = app.buttons["+"]
+        button2.tap()
+        app.buttons["5"].tap()
+        
+        let button3 = app.buttons["="]
+        button3.tap()
+        button2.tap()
+        app.buttons["6"].tap()
+        button3.tap()
+        button2.tap()
+        button.tap()
+        button3.tap()
+        app.buttons["√"].tap()
+        app.buttons["1/x"].tap()
+        button2.tap()
+        app.buttons["1"].tap()
+        app.buttons["."].tap()
+        app.buttons["8"].tap()
+        button3.tap()
+        app.buttons["10ⁿ"].tap()
+        app.buttons["AC"].tap()
+        app.buttons["e"].tap()
+        app.buttons["xⁿ"].tap()
+        app.buttons["π"].tap()
+        button3.tap()
+        button3.tap()
+        button3.tap()
+        
     }
     
 }

@@ -10,9 +10,9 @@ import UIKit
 
 
 //TODO: UI testing (automatic testing) 
-// 1) press "." and then a number, ".5" will cause crash? Expected behavior is after pressing "5", should display 0.5
-// 2) press "." only, should change display to "0.", but if press "=" next, should display "0"
-// 3) press a number, then press ".", e.g. 5. then press "=", should display "5"
+// 1) V: press "." and then a number, ".5" will cause crash? Expected behavior is after pressing "5", should display 0.5
+// 2) VB: press "." only, should change display to "0.", but if press "=" next, should display "0"
+// 3) V: press a number, then press ".", e.g. 5. then press "=", should display "5"
 // 4) what if pressed "5.4" and "+", and then pressed ".", should display "0."
 // 5) press "5" and "+" and then press "-" and "2", result should be "3" not "5" 
 // 6) press "7" and "+" and "=" should results in "14" 

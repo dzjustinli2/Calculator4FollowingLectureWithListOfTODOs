@@ -12,25 +12,25 @@
 		D047CB7A1D3242B60071F26E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D047CB781D3242B60071F26E /* Main.storyboard */; };
 		D047CB7C1D3242B60071F26E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D047CB7B1D3242B60071F26E /* Assets.xcassets */; };
 		D047CB7F1D3242B60071F26E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D047CB7D1D3242B60071F26E /* LaunchScreen.storyboard */; };
-		D047CB8A1D3242B60071F26E /* Calculator4FollowingLectureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D047CB891D3242B60071F26E /* Calculator4FollowingLectureTests.swift */; };
 		D047CB951D3242B60071F26E /* Calculator4FollowingLectureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D047CB941D3242B60071F26E /* Calculator4FollowingLectureUITests.swift */; };
 		D047CBA31D325EE20071F26E /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D047CBA21D325EE20071F26E /* CalculatorBrain.swift */; };
+		D0938F3D1D3EFF5000FB3D38 /* Calculator4FollowingLectureWithListOfTODOsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0938F3C1D3EFF5000FB3D38 /* Calculator4FollowingLectureWithListOfTODOsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D047CB861D3242B60071F26E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D047CB691D3242B50071F26E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D047CB701D3242B50071F26E;
-			remoteInfo = Calculator4FollowingLecture;
-		};
 		D047CB911D3242B60071F26E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D047CB691D3242B50071F26E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = D047CB701D3242B50071F26E;
 			remoteInfo = Calculator4FollowingLecture;
+		};
+		D0938F3F1D3EFF5000FB3D38 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D047CB691D3242B50071F26E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D047CB701D3242B50071F26E;
+			remoteInfo = Calculator4FollowingLectureWithListOfTODOs;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -42,24 +42,17 @@
 		D047CB7B1D3242B60071F26E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D047CB7E1D3242B60071F26E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D047CB801D3242B60071F26E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D047CB851D3242B60071F26E /* Calculator4FollowingLectureWithListOfTODOs.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Calculator4FollowingLectureWithListOfTODOs.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D047CB891D3242B60071F26E /* Calculator4FollowingLectureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator4FollowingLectureTests.swift; sourceTree = "<group>"; };
-		D047CB8B1D3242B60071F26E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D047CB901D3242B60071F26E /* Calculator4FollowingLectureWithListOfTODOs.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Calculator4FollowingLectureWithListOfTODOs.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D047CB941D3242B60071F26E /* Calculator4FollowingLectureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator4FollowingLectureUITests.swift; sourceTree = "<group>"; };
 		D047CB961D3242B60071F26E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D047CBA21D325EE20071F26E /* CalculatorBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorBrain.swift; sourceTree = "<group>"; };
+		D0938F3A1D3EFF5000FB3D38 /* Calculator4FollowingLectureWithListOfTODOsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Calculator4FollowingLectureWithListOfTODOsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0938F3C1D3EFF5000FB3D38 /* Calculator4FollowingLectureWithListOfTODOsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator4FollowingLectureWithListOfTODOsTests.swift; sourceTree = "<group>"; };
+		D0938F3E1D3EFF5000FB3D38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		D047CB6E1D3242B50071F26E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D047CB821D3242B60071F26E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -73,14 +66,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D0938F371D3EFF5000FB3D38 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		D047CB681D3242B50071F26E = {
 			isa = PBXGroup;
 			children = (
-				D047CB731D3242B60071F26E /* Calculator4FollowingLecture */,
-				D047CB881D3242B60071F26E /* Calculator4FollowingLectureTests */,
+				D047CB731D3242B60071F26E /* Calculator4FollowingLectureWithListOfTODOs */,
+				D0938F3B1D3EFF5000FB3D38 /* Calculator4FollowingLectureWithListOfTODOsTests */,
 				D047CB931D3242B60071F26E /* Calculator4FollowingLectureUITests */,
 				D047CB721D3242B50071F26E /* Products */,
 			);
@@ -90,13 +90,13 @@
 			isa = PBXGroup;
 			children = (
 				D047CB711D3242B50071F26E /* Calculator4FollowingLectureWithListOfTODOs.app */,
-				D047CB851D3242B60071F26E /* Calculator4FollowingLectureWithListOfTODOs.xctest */,
 				D047CB901D3242B60071F26E /* Calculator4FollowingLectureWithListOfTODOs.xctest */,
+				D0938F3A1D3EFF5000FB3D38 /* Calculator4FollowingLectureWithListOfTODOsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D047CB731D3242B60071F26E /* Calculator4FollowingLecture */ = {
+		D047CB731D3242B60071F26E /* Calculator4FollowingLectureWithListOfTODOs */ = {
 			isa = PBXGroup;
 			children = (
 				D047CB761D3242B60071F26E /* CalculatorViewController.swift */,
@@ -107,16 +107,8 @@
 				D047CB7D1D3242B60071F26E /* LaunchScreen.storyboard */,
 				D047CB801D3242B60071F26E /* Info.plist */,
 			);
+			name = Calculator4FollowingLectureWithListOfTODOs;
 			path = Calculator4FollowingLecture;
-			sourceTree = "<group>";
-		};
-		D047CB881D3242B60071F26E /* Calculator4FollowingLectureTests */ = {
-			isa = PBXGroup;
-			children = (
-				D047CB891D3242B60071F26E /* Calculator4FollowingLectureTests.swift */,
-				D047CB8B1D3242B60071F26E /* Info.plist */,
-			);
-			path = Calculator4FollowingLectureTests;
 			sourceTree = "<group>";
 		};
 		D047CB931D3242B60071F26E /* Calculator4FollowingLectureUITests */ = {
@@ -126,6 +118,15 @@
 				D047CB961D3242B60071F26E /* Info.plist */,
 			);
 			path = Calculator4FollowingLectureUITests;
+			sourceTree = "<group>";
+		};
+		D0938F3B1D3EFF5000FB3D38 /* Calculator4FollowingLectureWithListOfTODOsTests */ = {
+			isa = PBXGroup;
+			children = (
+				D0938F3C1D3EFF5000FB3D38 /* Calculator4FollowingLectureWithListOfTODOsTests.swift */,
+				D0938F3E1D3EFF5000FB3D38 /* Info.plist */,
+			);
+			path = Calculator4FollowingLectureWithListOfTODOsTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,24 +149,6 @@
 			productReference = D047CB711D3242B50071F26E /* Calculator4FollowingLectureWithListOfTODOs.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D047CB841D3242B60071F26E /* Calculator4FollowingLectureWithListOfTODOsTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D047CB9C1D3242B60071F26E /* Build configuration list for PBXNativeTarget "Calculator4FollowingLectureWithListOfTODOsTests" */;
-			buildPhases = (
-				D047CB811D3242B60071F26E /* Sources */,
-				D047CB821D3242B60071F26E /* Frameworks */,
-				D047CB831D3242B60071F26E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D047CB871D3242B60071F26E /* PBXTargetDependency */,
-			);
-			name = Calculator4FollowingLectureWithListOfTODOsTests;
-			productName = Calculator4FollowingLectureTests;
-			productReference = D047CB851D3242B60071F26E /* Calculator4FollowingLectureWithListOfTODOs.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		D047CB8F1D3242B60071F26E /* Calculator4FollowingLectureWithListOfTODOsUITests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D047CB9F1D3242B60071F26E /* Build configuration list for PBXNativeTarget "Calculator4FollowingLectureWithListOfTODOsUITests" */;
@@ -184,6 +167,24 @@
 			productReference = D047CB901D3242B60071F26E /* Calculator4FollowingLectureWithListOfTODOs.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		D0938F391D3EFF5000FB3D38 /* Calculator4FollowingLectureWithListOfTODOsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0938F411D3EFF5000FB3D38 /* Build configuration list for PBXNativeTarget "Calculator4FollowingLectureWithListOfTODOsTests" */;
+			buildPhases = (
+				D0938F361D3EFF5000FB3D38 /* Sources */,
+				D0938F371D3EFF5000FB3D38 /* Frameworks */,
+				D0938F381D3EFF5000FB3D38 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D0938F401D3EFF5000FB3D38 /* PBXTargetDependency */,
+			);
+			name = Calculator4FollowingLectureWithListOfTODOsTests;
+			productName = Calculator4FollowingLectureWithListOfTODOsTests;
+			productReference = D0938F3A1D3EFF5000FB3D38 /* Calculator4FollowingLectureWithListOfTODOsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -198,12 +199,12 @@
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 6B2H5F362E;
 					};
-					D047CB841D3242B60071F26E = {
+					D047CB8F1D3242B60071F26E = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 6B2H5F362E;
 						TestTargetID = D047CB701D3242B50071F26E;
 					};
-					D047CB8F1D3242B60071F26E = {
+					D0938F391D3EFF5000FB3D38 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 6B2H5F362E;
 						TestTargetID = D047CB701D3242B50071F26E;
@@ -224,8 +225,8 @@
 			projectRoot = "";
 			targets = (
 				D047CB701D3242B50071F26E /* Calculator4FollowingLectureWithListOfTODOs */,
-				D047CB841D3242B60071F26E /* Calculator4FollowingLectureWithListOfTODOsTests */,
 				D047CB8F1D3242B60071F26E /* Calculator4FollowingLectureWithListOfTODOsUITests */,
+				D0938F391D3EFF5000FB3D38 /* Calculator4FollowingLectureWithListOfTODOsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -241,14 +242,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D047CB831D3242B60071F26E /* Resources */ = {
+		D047CB8E1D3242B60071F26E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D047CB8E1D3242B60071F26E /* Resources */ = {
+		D0938F381D3EFF5000FB3D38 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -268,14 +269,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D047CB811D3242B60071F26E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D047CB8A1D3242B60071F26E /* Calculator4FollowingLectureTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D047CB8C1D3242B60071F26E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -284,18 +277,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D0938F361D3EFF5000FB3D38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0938F3D1D3EFF5000FB3D38 /* Calculator4FollowingLectureWithListOfTODOsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D047CB871D3242B60071F26E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D047CB701D3242B50071F26E /* Calculator4FollowingLectureWithListOfTODOs */;
-			targetProxy = D047CB861D3242B60071F26E /* PBXContainerItemProxy */;
-		};
 		D047CB921D3242B60071F26E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D047CB701D3242B50071F26E /* Calculator4FollowingLectureWithListOfTODOs */;
 			targetProxy = D047CB911D3242B60071F26E /* PBXContainerItemProxy */;
+		};
+		D0938F401D3EFF5000FB3D38 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D047CB701D3242B50071F26E /* Calculator4FollowingLectureWithListOfTODOs */;
+			targetProxy = D0938F3F1D3EFF5000FB3D38 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -426,30 +427,6 @@
 			};
 			name = Release;
 		};
-		D047CB9D1D3242B60071F26E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = Calculator4FollowingLectureTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.justinli.Calculator4FollowingLectureTests;
-				PRODUCT_NAME = Calculator4FollowingLectureWithListOfTODOs;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Calculator4FollowingLectureWithListOfTODOs.app/Calculator4FollowingLectureWithListOfTODOs";
-			};
-			name = Debug;
-		};
-		D047CB9E1D3242B60071F26E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = Calculator4FollowingLectureTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.justinli.Calculator4FollowingLectureTests;
-				PRODUCT_NAME = Calculator4FollowingLectureWithListOfTODOs;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Calculator4FollowingLectureWithListOfTODOs.app/Calculator4FollowingLectureWithListOfTODOs";
-			};
-			name = Release;
-		};
 		D047CBA01D3242B60071F26E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -457,7 +434,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.justinli.Calculator4FollowingLectureUITests;
 				PRODUCT_NAME = Calculator4FollowingLectureWithListOfTODOs;
-				TEST_TARGET_NAME = Calculator4FollowingLecture;
+				PROVISIONING_PROFILE = "";
+				TEST_TARGET_NAME = Calculator4FollowingLectureWithListOfTODOs;
 			};
 			name = Debug;
 		};
@@ -468,7 +446,32 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.justinli.Calculator4FollowingLectureUITests;
 				PRODUCT_NAME = Calculator4FollowingLectureWithListOfTODOs;
-				TEST_TARGET_NAME = Calculator4FollowingLecture;
+				PROVISIONING_PROFILE = "";
+				TEST_TARGET_NAME = Calculator4FollowingLectureWithListOfTODOs;
+			};
+			name = Release;
+		};
+		D0938F421D3EFF5000FB3D38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = Calculator4FollowingLectureWithListOfTODOsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.justinli.Calculator4FollowingLectureWithListOfTODOsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Calculator4FollowingLectureWithListOfTODOs.app/Calculator4FollowingLectureWithListOfTODOs";
+			};
+			name = Debug;
+		};
+		D0938F431D3EFF5000FB3D38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = Calculator4FollowingLectureWithListOfTODOsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.justinli.Calculator4FollowingLectureWithListOfTODOsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Calculator4FollowingLectureWithListOfTODOs.app/Calculator4FollowingLectureWithListOfTODOs";
 			};
 			name = Release;
 		};
@@ -493,15 +496,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D047CB9C1D3242B60071F26E /* Build configuration list for PBXNativeTarget "Calculator4FollowingLectureWithListOfTODOsTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D047CB9D1D3242B60071F26E /* Debug */,
-				D047CB9E1D3242B60071F26E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		D047CB9F1D3242B60071F26E /* Build configuration list for PBXNativeTarget "Calculator4FollowingLectureWithListOfTODOsUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -510,6 +504,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		D0938F411D3EFF5000FB3D38 /* Build configuration list for PBXNativeTarget "Calculator4FollowingLectureWithListOfTODOsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0938F421D3EFF5000FB3D38 /* Debug */,
+				D0938F431D3EFF5000FB3D38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
