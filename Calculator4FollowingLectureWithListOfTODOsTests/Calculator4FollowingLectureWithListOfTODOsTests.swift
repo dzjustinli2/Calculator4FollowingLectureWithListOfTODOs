@@ -210,7 +210,20 @@ class Calculator4FollowingLectureWithListOfTODOsTests: XCTestCase {
         XCTAssertEqual(brain.description, "2 + 3 - ")
     }
     
-    
+    func testUndoTwice(){
+        brain.variableValues["M"] = 4
+        brain.setOperand("M")
+        brain.performOperation("×")
+        brain.setOperand(3)
+        brain.performOperation("+")
+        brain.rewindPreviousOperation()
+        brain.performOperation("-")
+        brain.setOperand(2)
+        brain.performOperation("=")
+        
+        XCTAssertEqual(brain.result, 10)
+        XCTAssertEqual(brain.description, "M × 3 - 2")
+    }
     
     
 }
