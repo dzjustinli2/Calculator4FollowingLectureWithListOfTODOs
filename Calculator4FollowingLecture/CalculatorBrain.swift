@@ -98,6 +98,7 @@ class CalculatorBrain {
     
     func setOperand(operand: Double){
         accumulator = operand
+        internalProgram.append(operand)
         
         //TODO: too many lines of code just to remove the trailing zero of "operand"
         let formatter = NSNumberFormatter()
@@ -113,6 +114,7 @@ class CalculatorBrain {
     }
     
     func performOperation(symbol: String){
+        internalProgram.append(symbol)
         
         if let operation = operationLookUp[symbol] {
             switch operation {
@@ -159,5 +161,30 @@ class CalculatorBrain {
         pending = nil
         accumulator = 0
         descriptionAccumulator = " "
+        internalProgram.removeAll()
+    }
+    
+    private var internalProgram = [AnyObject]()
+    
+    typealias PropertyList = AnyObject
+    
+    var program: PropertyList {
+        get {
+            //because "internalProgram" is a variable of struct type, therefore we are returning here a copy of "internalProgram", not a pointer to our internal implementation of "internalProgram"
+            return internalProgram
+        }
+        set {
+            clearAndResetToDefault()
+            if let ops = newValue as? [AnyObject]{
+                for op in ops {
+                    if let operand = op as? Double {
+                        setOperand(operand)
+                    } else if let operation = op as? String {
+                        performOperation(operation)
+                    }
+                    
+                }
+            }
+        }
     }
 }

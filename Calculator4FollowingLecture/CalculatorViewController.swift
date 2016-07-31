@@ -66,6 +66,7 @@ class CalculatorViewController: UIViewController {
     }
     
     @IBOutlet private weak var displayLabel: UILabel!
+
     @IBOutlet weak var calculationStepsLabel: UILabel!
     
     //TODO: implement check for "." in one or two lines of code 
@@ -160,6 +161,21 @@ class CalculatorViewController: UIViewController {
         }
         
     }
+    
+    var savedProgram: CalculatorBrain.PropertyList?
+    
+    @IBAction func save() {
+        savedProgram = brain.program
+    }
+    
+    @IBAction func restore(sender: AnyObject) {
+        if let program = savedProgram {
+            brain.program = program
+            displayedNumericalValue = brain.result
+            calculationStepsLabel.text = brain.description
+        }
+    }
+    
 }
 
 extension Double {
