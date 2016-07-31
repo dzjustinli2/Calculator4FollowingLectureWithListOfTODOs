@@ -347,22 +347,22 @@
                                                 <rect key="frame" x="161" y="27" width="60" height="60"/>
                                                 <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                <state key="normal" title="e">
+                                                <state key="normal" title="M">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="pressedOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rYb-GM-pce"/>
+                                                    <action selector="userValueInMemory:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UnW-6F-g9m"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yKG-ko-gLL">
                                                 <rect key="frame" x="229" y="27" width="60" height="60"/>
                                                 <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                <state key="normal" title="π">
+                                                <state key="normal" title="→M">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="pressedOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W95-eP-ygK"/>
+                                                    <action selector="setVariableValue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ow7-q8-88Y"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -543,11 +543,11 @@
                                                 <rect key="frame" x="151" y="22" width="60" height="60"/>
                                                 <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                <state key="normal" title="tanh">
+                                                <state key="normal" title="undo">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="pressedOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v0q-vS-sdO"/>
+                                                    <action selector="deletePreviouslyEnteredDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ovE-LT-qyN"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4C5-EK-pc1">

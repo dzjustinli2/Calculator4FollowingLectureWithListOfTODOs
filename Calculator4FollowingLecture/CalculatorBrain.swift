@@ -106,7 +106,6 @@ class CalculatorBrain {
         formatter.maximumFractionDigits = 6
         formatter.minimumIntegerDigits = 1
         if let stringOfOperandWithNoTrailingZero = formatter.stringFromNumber(operand) {
-            
             descriptionAccumulator = stringOfOperandWithNoTrailingZero
         } else {
             descriptionAccumulator = String(operand)
@@ -114,6 +113,9 @@ class CalculatorBrain {
     }
     
     func performOperation(symbol: String){
+        
+        storeBackup()
+        
         internalProgram.append(symbol)
         
         if let operation = operationLookUp[symbol] {
@@ -151,6 +153,16 @@ class CalculatorBrain {
         }
     }
     
+    private var backupInternalProgram = [AnyObject]()
+    
+    private func storeBackup(){
+        backupInternalProgram = internalProgram
+    }
+    
+    func rewindPreviousOperation(){
+        recalculateInternalProgram()
+    }
+    
     var result: Double {
         get {
             return accumulator
@@ -162,6 +174,7 @@ class CalculatorBrain {
         accumulator = 0
         descriptionAccumulator = " "
         internalProgram.removeAll()
+        variableValues = [:]
     }
     
     private var internalProgram = [AnyObject]()
@@ -183,6 +196,41 @@ class CalculatorBrain {
                         performOperation(operation)
                     }
                     
+                }
+            }
+        }
+    }
+    
+    func setOperand(variableName: String){
+        
+        let operandAsDouble = variableValues[variableName] ?? 0.0
+        accumulator = operandAsDouble
+        internalProgram.append(variableName)
+        descriptionAccumulator = variableName
+
+    }
+    
+    var variableValues: Dictionary<String, Double> = [:] {
+        didSet {
+            recalculateInternalProgram()
+        }
+    }
+    
+    private func recalculateInternalProgram(){
+        pending = nil
+        accumulator = 0
+        descriptionAccumulator = " "
+        internalProgram = []
+        if !backupInternalProgram.isEmpty {
+            for op in backupInternalProgram {
+                if let operand = op as? Double {
+                    setOperand(operand)
+                } else if let operationOrSavedOperand = op as? String {
+                    if operationOrSavedOperand == "M" {
+                        setOperand(operationOrSavedOperand)
+                    } else {
+                        performOperation(operationOrSavedOperand)
+                    }
                 }
             }
         }

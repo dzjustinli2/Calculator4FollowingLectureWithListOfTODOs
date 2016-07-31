@@ -164,5 +164,53 @@ class Calculator4FollowingLectureWithListOfTODOsTests: XCTestCase {
 //    }
 //    
     
+    func testDisplay9AfterPressing2AndSaveToMemoryAnd3AndPlusAndMAndPlusAnd4AndPlus(){
+        brain.variableValues["M"] = 2
+        brain.setOperand(3)
+        brain.performOperation("+")
+        brain.setOperand("M")
+        brain.performOperation("+")
+        brain.setOperand(4)
+        brain.performOperation("+")
+        
+        XCTAssertEqual(brain.result, 9)
+    }
+    
+    func testResultEqualTo9AfterPressing9AndPlusAndMAndEqualAndSquareRootAnd72AndSaveMemory(){
+        brain.setOperand(9)
+        brain.performOperation("+")
+        brain.setOperand("M")
+        brain.performOperation("=")
+        brain.performOperation("√")
+        brain.variableValues["M"] = 72
+        
+        XCTAssertEqual(brain.result, 9)
+    }
+    
+    func testPress2AndPlusAnd3AndPlusAndUndo(){
+        brain.setOperand(2)
+        brain.performOperation("+")
+        brain.setOperand(3)
+        brain.performOperation("+")
+        brain.rewindPreviousOperation()
+        
+        XCTAssertEqual(brain.result, 3)
+        XCTAssertEqual(brain.description, "2 + 3")
+    }
+    
+    func testPress2AndPlusAnd3AndPlusAndUndoAndMinus(){
+        brain.setOperand(2)
+        brain.performOperation("+")
+        brain.setOperand(3)
+        brain.performOperation("+")
+        brain.rewindPreviousOperation()
+        brain.performOperation("-")
+        
+        XCTAssertEqual(brain.result, 5)
+        XCTAssertEqual(brain.description, "2 + 3 - ")
+    }
+    
+    
+    
     
 }

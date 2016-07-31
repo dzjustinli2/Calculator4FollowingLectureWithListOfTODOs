@@ -150,12 +150,22 @@ class CalculatorViewController: UIViewController {
     //TODO: user pressed "5, ., 6" and pressed "D", should display "5." at "displayLabel.text"
     //TODO: user pressed "5, ., 6" and pressed "D", should display "5." at "displayLabel.text", and pressed "+", should work at normal, as in "5." should work as "5"
     @IBAction private func deletePreviouslyEnteredDigit(sender: UIButton) {
+        if userIsInTheMiddleOfTyping {
+            deleteLastDigit()
+        } else {
+            brain.rewindPreviousOperation()
+            displayedNumericalValue = brain.result
+            calculationStepsLabel.text = brain.description
+        }
+    }
+    
+    private func deleteLastDigit(){
         //"displayLabel.text" should always contain some number, whether it would be the number entered by the user or "0", therefore I'm force unwrapping it here
         var displayLabelText = displayLabel.text!
         _ = displayLabelText.removeAtIndex(displayLabelText.endIndex.predecessor())
         if displayLabelText.characters.count == 0 {
             displayLabel.text = "0"
-            userIsInTheMiddleOfTyping = false 
+            userIsInTheMiddleOfTyping = false
         } else {
             displayLabel.text = displayLabelText
         }
@@ -175,6 +185,18 @@ class CalculatorViewController: UIViewController {
             calculationStepsLabel.text = brain.description
         }
     }
+    
+    @IBAction func setVariableValue(sender: UIButton) {
+        userIsInTheMiddleOfTyping = false
+        brain.variableValues["M"] = displayedNumericalValue
+        displayedNumericalValue = brain.result
+
+    }
+    
+    @IBAction func userValueInMemory(sender: UIButton) {
+        brain.setOperand(sender.currentTitle!)
+    }
+    
     
 }
 
