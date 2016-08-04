@@ -174,6 +174,9 @@ class CalculatorBrain {
         accumulator = 0
         descriptionAccumulator = " "
         internalProgram.removeAll()
+        
+        backupInternalProgram = [AnyObject]()
+        
         variableValues = [:]
     }
     

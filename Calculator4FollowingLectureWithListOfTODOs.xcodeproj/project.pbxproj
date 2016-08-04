@@ -14,6 +14,7 @@
 		D047CB7F1D3242B60071F26E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D047CB7D1D3242B60071F26E /* LaunchScreen.storyboard */; };
 		D047CB951D3242B60071F26E /* Calculator4FollowingLectureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D047CB941D3242B60071F26E /* Calculator4FollowingLectureUITests.swift */; };
 		D047CBA31D325EE20071F26E /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D047CBA21D325EE20071F26E /* CalculatorBrain.swift */; };
+		D06D13121D4EFAEB0086AEBB /* AxesDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06D13111D4EFAEB0086AEBB /* AxesDrawer.swift */; };
 		D0938F3D1D3EFF5000FB3D38 /* Calculator4FollowingLectureWithListOfTODOsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0938F3C1D3EFF5000FB3D38 /* Calculator4FollowingLectureWithListOfTODOsTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		D047CB941D3242B60071F26E /* Calculator4FollowingLectureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator4FollowingLectureUITests.swift; sourceTree = "<group>"; };
 		D047CB961D3242B60071F26E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D047CBA21D325EE20071F26E /* CalculatorBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorBrain.swift; sourceTree = "<group>"; };
+		D06D13111D4EFAEB0086AEBB /* AxesDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxesDrawer.swift; sourceTree = "<group>"; };
 		D0938F3A1D3EFF5000FB3D38 /* Calculator4FollowingLectureWithListOfTODOsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Calculator4FollowingLectureWithListOfTODOsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0938F3C1D3EFF5000FB3D38 /* Calculator4FollowingLectureWithListOfTODOsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator4FollowingLectureWithListOfTODOsTests.swift; sourceTree = "<group>"; };
 		D0938F3E1D3EFF5000FB3D38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 		D047CB731D3242B60071F26E /* Calculator4FollowingLectureWithListOfTODOs */ = {
 			isa = PBXGroup;
 			children = (
+				D06D13111D4EFAEB0086AEBB /* AxesDrawer.swift */,
 				D047CB761D3242B60071F26E /* CalculatorViewController.swift */,
 				D047CBA21D325EE20071F26E /* CalculatorBrain.swift */,
 				D047CB781D3242B60071F26E /* Main.storyboard */,
@@ -264,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D047CBA31D325EE20071F26E /* CalculatorBrain.swift in Sources */,
+				D06D13121D4EFAEB0086AEBB /* AxesDrawer.swift in Sources */,
 				D047CB771D3242B60071F26E /* CalculatorViewController.swift in Sources */,
 				D047CB751D3242B60071F26E /* AppDelegate.swift in Sources */,
 			);
@@ -512,6 +516,7 @@
 				D0938F431D3EFF5000FB3D38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

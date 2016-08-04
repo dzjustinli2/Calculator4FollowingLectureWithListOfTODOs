@@ -225,5 +225,16 @@ class Calculator4FollowingLectureWithListOfTODOsTests: XCTestCase {
         XCTAssertEqual(brain.description, "M × 3 - 2")
     }
     
+    func testClear(){
+        brain.setOperand(3)
+        brain.performOperation("-")
+        brain.setOperand(2)
+        brain.performOperation("=")
+        brain.clearAndResetToDefault()
+        
+        XCTAssertEqual(brain.result, 0)
+        XCTAssertEqual(brain.description, " ")
+    }
+    
     
 }
