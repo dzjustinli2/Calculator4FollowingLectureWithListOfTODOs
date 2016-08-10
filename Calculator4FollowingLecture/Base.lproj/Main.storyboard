@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bUx-DB-sOs">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Split View Controller-->
+        <scene sceneID="VQk-BM-cOo">
+            <objects>
+                <splitViewController id="bUx-DB-sOs" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="a4u-aG-akR" kind="relationship" relationship="masterViewController" id="xYb-1w-yeY"/>
+                        <segue destination="Dpd-v7-7b7" kind="relationship" relationship="detailViewController" id="e6D-Wm-sbE"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ha4-8t-g1A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2665" y="906"/>
+        </scene>
         <!--Calculator View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -19,14 +33,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Usi-w9-oE8">
-                                <rect key="frame" x="20" y="28" width="560" height="60"/>
+                                <rect key="frame" x="20" y="72" width="560" height="60"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zW6-y9-w03">
-                                <rect key="frame" x="20" y="88" width="560" height="21"/>
+                                <rect key="frame" x="20" y="132" width="560" height="21"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -63,15 +77,15 @@
                                                             <action selector="deletePreviouslyEnteredDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bko-8Y-DjE"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLB-PN-zRm">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLB-PN-zRm">
                                                         <rect key="frame" x="68" y="0.0" width="34" height="42"/>
                                                         <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                        <state key="normal" title="%">
+                                                        <state key="normal" image="graph@22">
                                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="pressedOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZP1-Jm-pek"/>
+                                                            <segue destination="Dpd-v7-7b7" kind="showDetail" id="swl-OS-rij"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hit-lg-oMq">
@@ -641,6 +655,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="v5a-G9-KqK"/>
                     <connections>
                         <outlet property="calculationStepsLabel" destination="zW6-y9-w03" id="bGs-PD-Pye"/>
                         <outlet property="displayLabel" destination="Usi-w9-oE8" id="PX9-X5-hXP"/>
@@ -648,7 +663,46 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="565" y="440"/>
+            <point key="canvasLocation" x="-727" y="600"/>
+        </scene>
+        <!--Graph View Controller-->
+        <scene sceneID="uRl-Dm-sBF">
+            <objects>
+                <viewController id="Dpd-v7-7b7" customClass="GraphViewController" customModule="Calculator4FollowingLectureWithListOfTODOs" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XKy-f6-JgH"/>
+                        <viewControllerLayoutGuide type="bottom" id="iGB-xa-ATq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dgK-Cu-ylh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="46c-Hc-ntD" customClass="GraphView" customModule="Calculator4FollowingLectureWithListOfTODOs" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="shit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q5r-mJ-RS4">
+                                        <rect key="frame" x="97" y="190" width="180" height="116"/>
+                                        <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="46c-Hc-ntD" secondAttribute="trailing" id="6IW-mE-zD8"/>
+                            <constraint firstItem="46c-Hc-ntD" firstAttribute="bottom" secondItem="iGB-xa-ATq" secondAttribute="top" id="CDa-hp-abP"/>
+                            <constraint firstItem="46c-Hc-ntD" firstAttribute="leading" secondItem="dgK-Cu-ylh" secondAttribute="leading" id="WMR-et-GTv"/>
+                            <constraint firstItem="46c-Hc-ntD" firstAttribute="top" secondItem="dgK-Cu-ylh" secondAttribute="top" id="Yx8-GZ-8iV"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="512-V6-2ox" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1540" y="1411"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ysm-Yk-Bnf">
@@ -948,7 +1002,31 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kpO-kk-It6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="565" y="1111"/>
+            <point key="canvasLocation" x="-2665" y="1728"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="MRt-2a-ks3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="a4u-aG-akR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="joM-Oy-p3j">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="SHb-Vh-HsN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fhS-9B-K0M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1539" y="600"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="graph@22" width="32" height="26"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="swl-OS-rij"/>
+    </inferredMetricsTieBreakers>
 </document>

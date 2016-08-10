@@ -16,6 +16,9 @@
 		D047CBA31D325EE20071F26E /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D047CBA21D325EE20071F26E /* CalculatorBrain.swift */; };
 		D06D13121D4EFAEB0086AEBB /* AxesDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06D13111D4EFAEB0086AEBB /* AxesDrawer.swift */; };
 		D0938F3D1D3EFF5000FB3D38 /* Calculator4FollowingLectureWithListOfTODOsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0938F3C1D3EFF5000FB3D38 /* Calculator4FollowingLectureWithListOfTODOsTests.swift */; };
+		D0966CE11D5AC57E000CB3E4 /* ListOfClassTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0966CE01D5AC57E000CB3E4 /* ListOfClassTasks.swift */; };
+		D0966CE41D5ACAC8000CB3E4 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0966CE31D5ACAC8000CB3E4 /* GraphViewController.swift */; };
+		D0966CE61D5ACB2D000CB3E4 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0966CE51D5ACB2D000CB3E4 /* GraphView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		D0938F3A1D3EFF5000FB3D38 /* Calculator4FollowingLectureWithListOfTODOsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Calculator4FollowingLectureWithListOfTODOsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0938F3C1D3EFF5000FB3D38 /* Calculator4FollowingLectureWithListOfTODOsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator4FollowingLectureWithListOfTODOsTests.swift; sourceTree = "<group>"; };
 		D0938F3E1D3EFF5000FB3D38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0966CE01D5AC57E000CB3E4 /* ListOfClassTasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListOfClassTasks.swift; path = ../ListOfClassTasks.swift; sourceTree = "<group>"; };
+		D0966CE31D5ACAC8000CB3E4 /* GraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
+		D0966CE51D5ACB2D000CB3E4 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,11 +110,11 @@
 				D06D13111D4EFAEB0086AEBB /* AxesDrawer.swift */,
 				D047CB761D3242B60071F26E /* CalculatorViewController.swift */,
 				D047CBA21D325EE20071F26E /* CalculatorBrain.swift */,
+				D0966CE31D5ACAC8000CB3E4 /* GraphViewController.swift */,
+				D0966CE51D5ACB2D000CB3E4 /* GraphView.swift */,
 				D047CB781D3242B60071F26E /* Main.storyboard */,
-				D047CB741D3242B60071F26E /* AppDelegate.swift */,
-				D047CB7B1D3242B60071F26E /* Assets.xcassets */,
-				D047CB7D1D3242B60071F26E /* LaunchScreen.storyboard */,
-				D047CB801D3242B60071F26E /* Info.plist */,
+				D0966CE21D5ACAA7000CB3E4 /* Supporting Files */,
+				D0966CE01D5AC57E000CB3E4 /* ListOfClassTasks.swift */,
 			);
 			name = Calculator4FollowingLectureWithListOfTODOs;
 			path = Calculator4FollowingLecture;
@@ -130,6 +136,17 @@
 				D0938F3E1D3EFF5000FB3D38 /* Info.plist */,
 			);
 			path = Calculator4FollowingLectureWithListOfTODOsTests;
+			sourceTree = "<group>";
+		};
+		D0966CE21D5ACAA7000CB3E4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D047CB7B1D3242B60071F26E /* Assets.xcassets */,
+				D047CB741D3242B60071F26E /* AppDelegate.swift */,
+				D047CB7D1D3242B60071F26E /* LaunchScreen.storyboard */,
+				D047CB801D3242B60071F26E /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,8 +285,11 @@
 			files = (
 				D047CBA31D325EE20071F26E /* CalculatorBrain.swift in Sources */,
 				D06D13121D4EFAEB0086AEBB /* AxesDrawer.swift in Sources */,
+				D0966CE61D5ACB2D000CB3E4 /* GraphView.swift in Sources */,
 				D047CB771D3242B60071F26E /* CalculatorViewController.swift in Sources */,
+				D0966CE41D5ACAC8000CB3E4 /* GraphViewController.swift in Sources */,
 				D047CB751D3242B60071F26E /* AppDelegate.swift in Sources */,
+				D0966CE11D5AC57E000CB3E4 /* ListOfClassTasks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

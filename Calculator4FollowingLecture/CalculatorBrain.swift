@@ -160,7 +160,7 @@ class CalculatorBrain {
     }
     
     func rewindPreviousOperation(){
-        recalculateInternalProgram()
+        internalProgram = backupInternalProgram
     }
     
     var result: Double {
@@ -190,13 +190,19 @@ class CalculatorBrain {
             return internalProgram
         }
         set {
-            clearAndResetToDefault()
+            pending = nil
+            accumulator = 0
+            descriptionAccumulator = " "
             if let ops = newValue as? [AnyObject]{
                 for op in ops {
                     if let operand = op as? Double {
                         setOperand(operand)
-                    } else if let operation = op as? String {
-                        performOperation(operation)
+                    } else if let operationOrSavedOperand = op as? String {
+                        if operationOrSavedOperand == "M" {
+                            setOperand("M")
+                        } else {
+                            performOperation(operationOrSavedOperand)
+                        }
                     }
                     
                 }
@@ -215,7 +221,7 @@ class CalculatorBrain {
     
     var variableValues: Dictionary<String, Double> = [:] {
         didSet {
-            recalculateInternalProgram()
+            program = internalProgram
         }
     }
     
