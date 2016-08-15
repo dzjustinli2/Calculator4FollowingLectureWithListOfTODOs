@@ -677,18 +677,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="46c-Hc-ntD" customClass="GraphView" customModule="Calculator4FollowingLectureWithListOfTODOs" customModuleProvider="target">
+                            <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="46c-Hc-ntD" customClass="GraphView" customModule="Calculator4FollowingLectureWithListOfTODOs" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="shit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q5r-mJ-RS4">
-                                        <rect key="frame" x="97" y="190" width="180" height="116"/>
-                                        <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="LH1-oL-42e" appends="YES" id="LDs-qG-v0b"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -699,8 +694,16 @@
                             <constraint firstItem="46c-Hc-ntD" firstAttribute="top" secondItem="dgK-Cu-ylh" secondAttribute="top" id="Yx8-GZ-8iV"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="graphView" destination="46c-Hc-ntD" id="N43-rZ-SxK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="512-V6-2ox" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="LH1-oL-42e">
+                    <connections>
+                        <action selector="tap:" destination="Dpd-v7-7b7" id="ipq-zh-CC5"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1540" y="1411"/>
         </scene>

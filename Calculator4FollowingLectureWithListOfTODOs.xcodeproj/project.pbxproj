@@ -19,6 +19,7 @@
 		D0966CE11D5AC57E000CB3E4 /* ListOfClassTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0966CE01D5AC57E000CB3E4 /* ListOfClassTasks.swift */; };
 		D0966CE41D5ACAC8000CB3E4 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0966CE31D5ACAC8000CB3E4 /* GraphViewController.swift */; };
 		D0966CE61D5ACB2D000CB3E4 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0966CE51D5ACB2D000CB3E4 /* GraphView.swift */; };
+		D0966D381D613DBF000CB3E4 /* ProtocolsAndExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0966D371D613DBF000CB3E4 /* ProtocolsAndExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		D0966CE01D5AC57E000CB3E4 /* ListOfClassTasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListOfClassTasks.swift; path = ../ListOfClassTasks.swift; sourceTree = "<group>"; };
 		D0966CE31D5ACAC8000CB3E4 /* GraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 		D0966CE51D5ACB2D000CB3E4 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		D0966D371D613DBF000CB3E4 /* ProtocolsAndExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProtocolsAndExtensions.swift; path = ../ProtocolsAndExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				D0966CE31D5ACAC8000CB3E4 /* GraphViewController.swift */,
 				D0966CE51D5ACB2D000CB3E4 /* GraphView.swift */,
 				D047CB781D3242B60071F26E /* Main.storyboard */,
+				D0966D371D613DBF000CB3E4 /* ProtocolsAndExtensions.swift */,
 				D0966CE21D5ACAA7000CB3E4 /* Supporting Files */,
 				D0966CE01D5AC57E000CB3E4 /* ListOfClassTasks.swift */,
 			);
@@ -290,6 +293,7 @@
 				D0966CE41D5ACAC8000CB3E4 /* GraphViewController.swift in Sources */,
 				D047CB751D3242B60071F26E /* AppDelegate.swift in Sources */,
 				D0966CE11D5AC57E000CB3E4 /* ListOfClassTasks.swift in Sources */,
+				D0966D381D613DBF000CB3E4 /* ProtocolsAndExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
